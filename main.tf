@@ -1,6 +1,6 @@
 module "naming" {
   source = "Azure/naming/azurerm"
-  suffix = ["management", "acr", local.location_short]
+  suffix = ["man", "acr"]
 }
 
 resource "azurerm_resource_group" "resource_group" {
