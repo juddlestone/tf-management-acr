@@ -36,4 +36,3 @@ resource "azurerm_container_registry_token" "registry_token" {
   resource_group_name     = azurerm_resource_group.resource_group.name
   scope_map_id            = azurerm_container_registry_scope_map.registry_scope_map[each.key].id
 }
-
