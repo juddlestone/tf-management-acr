@@ -36,3 +36,16 @@ resource "azurerm_container_registry_token" "registry_token" {
   resource_group_name     = azurerm_resource_group.resource_group.name
   scope_map_id            = azurerm_container_registry_scope_map.registry_scope_map[each.key].id
 }
+
+resource "time_static" "time_static" {
+  for_each = local.applications
+}
+
+resource "azurerm_container_registry_token_password" "registry_token_password" {
+  for_each                    = local.applications
+  container_registry_token_id = azurerm_container_registry_token.registry_token[each.key].id
+
+  password1 {
+    expiry = timeadd(time_static.time_static[each.key].time, "8760h") # 1 year
+  }
+}
