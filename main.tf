@@ -46,6 +46,10 @@ resource "azurerm_container_registry_token_password" "registry_token_password" {
   container_registry_token_id = azurerm_container_registry_token.registry_token[each.key].id
 
   password1 {
-    expiry = timeadd(time_static.time_static[each.key].time, "8760h") # 1 year
+    expiry = timeadd(time_static.time_static[each.key].rfc3339, "8760h") # 1 year
+  }
+
+  password2 {
+    expiry = timeadd(time_static.time_static[each.key].rfc3339, "8760h") # 1 year
   }
 }
