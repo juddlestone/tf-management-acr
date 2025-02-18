@@ -12,3 +12,15 @@ locals {
     ServiceName  = "ACR"
   }
 }
+
+# Applications and their actions
+locals {
+  applications = {
+    "accelerator" = {
+      actions = [
+        "repositories/accelerator/content/read",
+        "repositories/accelerator/content/write"
+      ]
+    }
+  }
+}
