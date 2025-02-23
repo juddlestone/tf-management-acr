@@ -21,6 +21,12 @@ locals {
         "repositories/accelerator/content/read",
         "repositories/accelerator/content/write"
       ]
-    }
+    },
+  "resume" = {
+      actions = [
+        "repositories/resume/content/read",
+        "repositories/resume/content/write"
+      ]
+  }
   }
 }
