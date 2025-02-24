@@ -22,11 +22,11 @@ locals {
         "repositories/accelerator/content/write"
       ]
     },
-  "resume" = {
+    "resume" = {
       actions = [
         "repositories/resume/content/read",
         "repositories/resume/content/write"
       ]
-  }
+    }
   }
 }
